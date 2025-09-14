@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import QuestionManagement from './pages/admin/Question-Management';
+import QuizManagement from './pages/admin/Quiz-Management';
+import RoleManagement from './pages/admin/Role-Management';
+import UserManagement from './pages/admin/User-Management';
+import Home from './pages/customer/Home';
+import About from './pages/customer/About';
+import Contact from './pages/customer/Contact';
+import Quizzes from './pages/customer/Quizzes';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import Error403 from './pages/error/403';
+import Error404 from './pages/error/404';
 
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/403" element={<Error403 />} />
+        <Route path="/404" element={<Error404 />} />
+        <Route path="/admin/question-management" element={<QuestionManagement />} />
+        <Route path="/admin/quiz-management" element={<QuizManagement />} />
+        <Route path="/admin/role-management" element={<RoleManagement />} />
+        <Route path="/admin/user-management" element={<UserManagement />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
