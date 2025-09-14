@@ -1,265 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>User Management - Quizzes</title>
-  <link rel="stylesheet" href="../../css/common.css">
-  <link rel="stylesheet" href="../../css/quiz-management.css">
-  <link rel="stylesheet" href="../../css/user-management.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-  <div class="container">
+
+<body class="bg-gray-100">
+  <div class="min-h-screen">
     <!-- Top Header -->
-    <header class="top-header">
-      <div class="logo">
-        <img src="../../assets/brand.png" alt="Quizzes Logo">
-      </div>
-      <nav class="main-nav">
-        <a href="../home.html">Home</a>
-        <a href="../quizzes.html">Quizzes</a>
-        <a class="active" href="#">Management</a>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-      </nav>
-      <div class="user-profile">
-        <img src="../../assets/profile-avatar.png" alt="Avatar" class="avatar">
-        <span class="avatar-tip">Cong Dinh</span>
-        <div class="dropdown-menu">
-          <div class="dropdown-content">
-            <p>Cong Dinh</p>
-            <p><a href="#">Change Password</a></p>
-            <p><a href="#">Logout</a></p>
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <img src="../../assets/brand.png" alt="Quizzes Logo" class="h-8 w-auto">
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="../home.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
+            <a href="../quizzes.html"
+              class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Quizzes</a>
+            <a href="#" class="text-blue-600 border-b-2 border-blue-600 px-3 py-2 text-sm font-medium">Management</a>
+            <a href="../about.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">About</a>
+            <a href="../contact.html"
+              class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Contact</a>
+          </nav>
+          <div class="flex items-center">
+            <div class="relative group">
+              <div class="flex items-center space-x-2 cursor-pointer">
+                <img src="../../assets/profile-avatar.png" alt="Avatar" class="h-8 w-8 rounded-full">
+                <span class="text-sm font-medium text-gray-700">Cong Dinh</span>
+              </div>
+              <div
+                class="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+                <div class="py-1">
+                  <p class="px-4 py-2 text-sm text-gray-700">Cong Dinh</p>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Change Password</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <div class="content-wrapper">
+    <div class="flex">
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <h2>Menu</h2>
-        <ul>
-          <li><a href="./quiz-management.html"><i class="fa-solid fa-clipboard-list"></i> Quiz Management</a></li>
-          <li><a href="./question-management.html"><i class="fa-solid fa-question-circle"></i> Question Management</a></li>
-          <li class="active"><a href="./user-management.html"><i class="fa-solid fa-user"></i> User Management</a></li>
-          <li><a href="./role-management.html"><i class="fa-solid fa-users-cog"></i> Role Management</a></li>
-        </ul>
+      <aside class="w-64 bg-white shadow-sm h-screen sticky top-0">
+        <div class="p-6">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Menu</h2>
+          <nav class="space-y-1">
+            <a href="./quiz-management.html"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-clipboard-list mr-3 text-gray-400"></i>
+              Quiz Management
+            </a>
+            <a href="./question-management.html"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-question-circle mr-3 text-gray-400"></i>
+              Question Management
+            </a>
+            <a href="./user-management.html"
+              class="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md">
+              <i class="fas fa-user mr-3 text-blue-600"></i>
+              User Management
+            </a>
+            <a href="./role-management.html"
+              class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-users-cog mr-3 text-gray-400"></i>
+              Role Management
+            </a>
+          </nav>
+        </div>
       </aside>
 
       <!-- Main Content Area -->
-      <main class="main-content">
-        <div class="main-inner">
-          <div class="content-header">
-            <h2>User Management</h2>
+      <main class="flex-1 p-6">
+        <!-- Header -->
+        <div class="mb-6">
+          <h1 class="text-2xl font-bold text-gray-900">User Management</h1>
+          <p class="mt-1 text-sm text-gray-600">Manage user accounts and permissions</p>
+        </div>
+
+        <!-- Search Panel -->
+        <div class="bg-white rounded-lg shadow mb-6">
+          <div class="p-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">User Management</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="u-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input type="text" id="u-name" placeholder="Enter username to search..."
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+              </div>
+              <div>
+                <label for="u-active" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <div class="flex items-center h-10">
+                  <input type="checkbox" id="u-active"
+                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                  <label for="u-active" class="ml-2 text-sm text-gray-700">Active</label>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+              <button type="button"
+                class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
+                <i class="fas fa-plus mr-2"></i>Create
+              </button>
+              <div class="flex space-x-3">
+                <button type="reset"
+                  class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                  <i class="fas fa-rotate-left mr-2"></i>Clear
+                </button>
+                <button type="submit"
+                  class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                  <i class="fas fa-search mr-2"></i>Search
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- User List -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">User List</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User Name
+                  </th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone
+                    Number</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">Admin</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">User</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">admin@domain.com</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">admin</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">+84987654321</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">Editor</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">User</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">editor@domain.com</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">editor</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">+84987654321</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">Cong</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">Dinh</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">congdinh@domain.com</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">congdinh</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">+84987654321</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">Van</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">Nguyen</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">vannguyen@domain.com</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">vannguyen</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-500">+84987654321</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <!-- Search Panel -->
-          <div class="panel">
-            <div class="panel-header"><h3>User Management</h3></div>
-            <div class="search-panel">
-              <div class="search-form">
-                <div class="form-group field-name">
-                  <label for="u-name">Name</label>
-                  <input id="u-name" type="text" placeholder="Enter username to search">
+          <!-- Pagination -->
+          <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-sm text-gray-700">Items per page:</span>
+              <select
+                class="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option>10</option>
+                <option>20</option>
+                <option>50</option>
+              </select>
+            </div>
+
+            <div class="flex items-center space-x-1">
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="First page">
+                <i class="fas fa-angle-double-left"></i>
+              </button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Previous page">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <button class="px-3 py-1 bg-blue-600 text-white rounded-md">1</button>
+              <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-md">2</button>
+              <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-md">3</button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Next page">
+                <i class="fas fa-angle-right"></i>
+              </button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Last page">
+                <i class="fas fa-angle-double-right"></i>
+              </button>
+            </div>
+
+            <div class="text-sm text-gray-700">
+              1-10 of 32
+            </div>
+          </div>
+        </div>
+
+        <!-- Add User Form -->
+        <div class="bg-white rounded-lg shadow mt-6">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">Add User</h3>
+          </div>
+          <div class="p-6">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                  <input type="text" placeholder="Enter your first name..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                 </div>
-                <div class="form-group field-status minw-auto">
-                  <label for="u-active">Status</label>
-                  <div class="checkbox">
-                    <input type="checkbox" id="u-active">
-                    <label for="u-active">Active</label>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                  <input type="text" placeholder="Enter your last name..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input type="email" placeholder="Enter your email..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">User Name</label>
+                  <input type="text" placeholder="Enter your user name..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <input type="password" placeholder="Enter your password..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                  <input type="password" placeholder="Confirm your password..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+                  <input type="date"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input type="text" placeholder="Enter your phone number..."
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                  <div class="flex items-center h-10">
+                    <input type="checkbox" id="user-status"
+                      class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="user-status" class="ml-2 text-sm text-gray-700">Active</label>
                   </div>
                 </div>
-                <div class="button-create">
-                  <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Create</button>
-                </div>
-                <div class="button-group">
-                  <button type="reset" class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Clear</button>
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
-                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- User List -->
-          <div class="table-panel">
-            <h3>User List</h3>
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>User Name</th>
-                    <th>Phone Number</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Admin</td>
-                    <td>User</td>
-                    <td>admin@domain.com</td>
-                    <td>admin</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-buttons">
-                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Editor</td>
-                    <td>User</td>
-                    <td>editor@domain.com</td>
-                    <td>editor</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-buttons">
-                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cong</td>
-                    <td>Dinh</td>
-                    <td>congdinh@domain.com</td>
-                    <td>congdinh</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-buttons">
-                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Van</td>
-                    <td>Nguyen</td>
-                    <td>vannguyen@domain.com</td>
-                    <td>vannguyen</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-buttons">
-                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="pagination">
-              <div class="items-per-page">
-                <span>Items per page:</span>
-                <select>
-                  <option>10</option>
-                  <option>20</option>
-                  <option>50</option>
-                </select>
+              <div class="flex justify-end space-x-3 pt-6 border-t border-gray-200">
+                <button type="button"
+                  class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                  <i class="fas fa-times mr-2"></i>Cancel
+                </button>
+                <button type="submit"
+                  class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
+                  <i class="fas fa-save mr-2"></i>Save
+                </button>
               </div>
-              <div class="page-numbers">
-                <a href="#" class="page-first"><i class="fas fa-angle-double-left"></i></a>
-                <a href="#" class="page-prev"><i class="fas fa-angle-left"></i></a>
-                <a href="#" class="page-number active">1</a>
-                <a href="#" class="page-number">2</a>
-                <a href="#" class="page-number">3</a>
-                <a href="#" class="page-next"><i class="fas fa-angle-right"></i></a>
-                <a href="#" class="page-last"><i class="fas fa-angle-double-right"></i></a>
-              </div>
-              <div class="page-info">
-                <span>1-10 of 32</span>
-              </div>
-            </div>
+            </form>
           </div>
-
-          <!-- Add User -->
-          <div class="form-panel">
-            <h3>Add User</h3>
-            <div class="add-user-form">
-              <div class="form-grid">
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input type="text" placeholder="Enter your first name">
-                </div>
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input type="text" placeholder="Enter your last name">
-                </div>
-                <div class="form-group">
-                  <label>Email</label>
-                  <input type="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                  <label>User Name</label>
-                  <input type="text" placeholder="Enter your user name">
-                </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" placeholder="Enter your password">
-                </div>
-                <div class="form-group">
-                  <label>Confirm Password</label>
-                  <input type="password" placeholder="Confirm your password">
-                </div>
-                <div class="form-group">
-                  <label>Date of Birth</label>
-                  <input type="date">
-                </div>
-                <div class="form-group">
-                  <label>Phone Number</label>
-                  <input type="text" placeholder="Enter your phone number">
-                </div>
-                <div class="form-group">
-                  <label>Status</label>
-                  <div class="checkbox">
-                    <input type="checkbox" id="user-status">
-                    <label for="user-status">Active</label>
-                  </div>
-                </div>
-              </div>
-              <div class="toolbar right">
-                <button class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Cancel</button>
-                <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <footer class="site-footer">
-            <div class="footer-inner">
-              <div class="footer-brand">
-                <div class="brand">
-                  <img src="../../assets/brand.png" alt="Quizzes">
-                  <span>Quizzes</span>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="footer-col">
-                <h4>Menu</h4>
-                <ul class="footer-menu">
-                  <li><a href="../home.html">Home</a></li>
-                  <li><a href="../quizzes.html">Quizzes</a></li>
-                  <li><a href="../about.html">About</a></li>
-                  <li><a href="../contact.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-col">
-                <h4>Contact</h4>
-                <ul class="footer-contact">
-                  <li><i class="fa-regular fa-envelope"></i> congdinh2021@gmail.com</li>
-                  <li><i class="fa-solid fa-phone"></i> +84 944 551 356</li>
-                  <li><i class="fa-solid fa-location-dot"></i> 123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam</li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-bottom">© May 2024 - ReactJS 19</div>
-          </footer>
         </div>
       </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="text-[rgba(56,182,255,1)] text-black py-8 mt-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img src="../../assets/brand.png" alt="Quizzes" class="h-8 w-auto mr-2">
+
+            </div>
+            <p class="text-rgba(33, 37, 41, 1)]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Menu</h4>
+            <ul class="space-y-2">
+              <li><a href="../home.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">Home</a></li>
+              <li><a href="../quizzes.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">Quizzes</a></li>
+              <li><a href="../about.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">About</a></li>
+              <li><a href="../contact.html"
+                  class="text-[rgba(56,182,255,1)]   hover:text-white transition duration-200">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">123 Main Street, City, Country</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">info@quizzes.com</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-black">
+          <p>&copy; 2023 Quizzes. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </div>
+
   <script src="../../js/user-management.js"></script>
 </body>
 </html>
