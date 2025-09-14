@@ -3,391 +3,654 @@
 <head>
   <meta charset="UTF-8">
   <title>Question Management - Quizzes</title>
-  <link rel="stylesheet" href="../../css/common.css">
-  <link rel="stylesheet" href="../../css/quiz-management.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-  <div class="container">
-    <!-- Top Header (identical) -->
-    <header class="top-header">
-      <div class="logo">
-        <img src="../../assets/brand.png" alt="Quizzes Logo">
-      </div>
-      <nav class="main-nav">
-        <a href="../home.html">Home</a>
-        <a href="../quizzes.html">Quizzes</a>
-        <a class="active" href="#">Management</a>
-        <a href="../about.html">About</a>
-        <a href="../contact.html">Contact</a>
-      </nav>
-      <div class="user-profile">
-        <img src="../../assets/profile-avatar.png" alt="Avatar" class="avatar">
-        <span class="avatar-tip">Cong Dinh</span>
-        <div class="dropdown-menu">
-          <div class="dropdown-content">
-            <p>Cong Dinh</p>
-            <p><a href="#">Change Password</a></p>
-            <p><a href="#">Logout</a></p>
+<body class="bg-gray-100">
+  <div class="min-h-screen">
+    <!-- Top Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <img src="../../assets/brand.png" alt="Quizzes Logo" class="h-8 w-auto">
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="../home.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
+            <a href="../quizzes.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Quizzes</a>
+            <a href="#" class="text-blue-600 border-b-2 border-blue-600 px-3 py-2 text-sm font-medium">Management</a>
+            <a href="../about.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">About</a>
+            <a href="../contact.html" class="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Contact</a>
+          </nav>
+          <div class="flex items-center">
+            <div class="relative group">
+              <div class="flex items-center space-x-2 cursor-pointer">
+                <img src="../../assets/profile-avatar.png" alt="Avatar" class="h-8 w-8 rounded-full">
+                <span class="text-sm font-medium text-gray-700">Cong Dinh</span>
+              </div>
+              <div class="absolute right-0 top-full mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+                <div class="py-1">
+                  <p class="px-4 py-2 text-sm text-gray-700">Cong Dinh</p>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Change Password</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
     
     <!-- Main Content -->
-    <div class="content-wrapper">
+    <div class="flex">
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <h2>Menu</h2>
-        <ul>
-          <li><a href="./quiz-management.html"><i class="fa-solid fa-clipboard-list"></i> Quiz Management</a></li>
-          <li class="active"><a href="./question-management.html"><i class="fa-solid fa-question-circle"></i> Question Management</a></li>
-          <li><a href="./user-management.html"><i class="fa-solid fa-user"></i> User Management</a></li>
-          <li><a href="./role-management.html"><i class="fa-solid fa-users-cog"></i> Role Management</a></li>
-        </ul>
-      </aside>  
+      <aside class="w-64 bg-white shadow-sm h-screen sticky top-0">
+        <div class="p-6">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Menu</h2>
+          <nav class="space-y-1">
+            <a href="./quiz-management.html" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-clipboard-list mr-3 text-gray-400"></i>
+              Quiz Management
+            </a>
+            <a href="./question-management.html" class="flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md">
+              <i class="fas fa-question-circle mr-3 text-blue-600"></i>
+              Question Management
+            </a>
+            <a href="./user-management.html" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-user mr-3 text-gray-400"></i>
+              User Management
+            </a>
+            <a href="./role-management.html" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+              <i class="fas fa-users-cog mr-3 text-gray-400"></i>
+              Role Management
+            </a>
+          </nav>
+        </div>
+      </aside>
 
       <!-- Main Content Area -->
-      <main class="main-content">
-        <div class="main-inner">
-          <div class="content-header">
-          <h2>Question Management</h2>
+      <main class="flex-1 p-6">
+        <!-- Header -->
+        <div class="mb-6">
+          <h1 class="text-2xl font-bold text-gray-900">Question Management</h1>
+          <p class="mt-1 text-sm text-gray-600">Manage and organize quiz questions</p>
         </div>
 
-        <!-- Search Form (unified with quiz-management) -->
-        <div class="panel">
-          <div class="panel-header"><h3>Question Management</h3></div>
-          <div class="search-panel">
-            <div class="search-form has-type">
-              <div class="form-group field-name">
-                <label for="q-name">Name</label>
-                <input id="q-name" type="text" placeholder="Enter role name to search">
+        <!-- Search Panel -->
+        <div class="bg-white rounded-lg shadow mb-6">
+          <div class="p-6">
+            <h2 class="text-lg font-medium text-gray-900 mb-4">Search Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label for="q-name" class="block text-sm font-medium text-gray-700 mb-1">Question Name</label>
+                <input type="text" id="q-name" placeholder="Enter question name to search..." 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
               </div>
-              <div class="form-group field-type">
-                <label for="q-type">Type</label>
-                <select id="q-type">
-                  <option>Select Item</option>
+              <div>
+                <label for="q-type" class="block text-sm font-medium text-gray-700 mb-1">Type</label>
+                <select id="q-type" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                  <option value="">Select Type</option>
+                  <option value="multiple">Multiple Choice</option>
+                  <option value="single">Single Choice</option>
+                  <option value="text">Text Answer</option>
                 </select>
               </div>
-              <div class="form-group field-status minw-auto">
-                <label for="q-active">Status</label>
-                <div class="checkbox">
-                  <input type="checkbox" id="q-active">
-                  <label for="q-active">Active</label>
+              <div>
+                <label for="q-active" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <div class="flex items-center h-10">
+                  <input type="checkbox" id="q-active" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                  <label for="q-active" class="ml-2 text-sm text-gray-700">Active</label>
                 </div>
               </div>
-              <div class="button-create">
-                <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Create</button>
-              </div>
-              <div class="button-group">
-                <button type="reset" class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Clear</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+            </div>
+            <div class="flex justify-between items-center mt-6">
+              <button type="button" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
+                <i class="fas fa-plus mr-2"></i>Create
+              </button>
+              <div class="flex space-x-3">
+                <button type="reset" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                  <i class="fas fa-rotate-left mr-2"></i>Clear
+                </button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                  <i class="fas fa-search mr-2"></i>Search
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Question List -->
-        <div class="table-panel">
-          <h3>Question List</h3>
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">Question List</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
                 <tr>
-                  <th>Content</th>
-                  <th>Type</th>
-                  <th>Answers</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Content</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Answers</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="bg-white divide-y divide-gray-200">
                 <tr>
-                  <td>Who is the inventor of the airplane?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is the inventor of the airplane?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Who is the inventor of the World Wide Web?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is the inventor of the World Wide Web?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Where is Viet Nam?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Where is Viet Nam?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>What is the capital of France?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">What is the capital of France?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Who is the inventor of the alternating current?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is the inventor of the alternating current?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Who is a rockstar?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is a rockstar?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Who is the inventor of the ATM?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is the inventor of the ATM?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Where is France?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Where is France?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Where is the United States?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Where is the United States?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Who is the inventor of the washing machine?</td>
-                  <td>MultipleChoice</td>
-                  <td>4</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Who is the inventor of the washing machine?</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">MultipleChoice</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <div class="pagination">
-            <div class="items-per-page">
-              <span>Entries per page:</span>
-              <select>
+          <!-- Pagination -->
+          <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-sm text-gray-700">Entries per page:</span>
+              <select class="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option>10</option>
                 <option>20</option>
                 <option>50</option>
               </select>
             </div>
             
-            <div class="page-numbers">
-              <a href="#" class="page-first"><i class="fas fa-angle-double-left"></i></a>
-              <a href="#" class="page-prev"><i class="fas fa-angle-left"></i></a>
-              <a href="#" class="page-number active">1</a>
-              <a href="#" class="page-number">2</a>
-              <a href="#" class="page-number">3</a>
-              <a href="#" class="page-next"><i class="fas fa-angle-right"></i></a>
-              <a href="#" class="page-last"><i class="fas fa-angle-double-right"></i></a>
+            <div class="flex items-center space-x-1">
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="First page">
+                <i class="fas fa-angle-double-left"></i>
+              </button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Previous page">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <button class="px-3 py-1 bg-blue-600 text-white rounded-md">1</button>
+              <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-md">2</button>
+              <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-md">3</button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Next page">
+                <i class="fas fa-angle-right"></i>
+              </button>
+              <button class="px-2 py-1 text-gray-400 hover:text-gray-600" title="Last page">
+                <i class="fas fa-angle-double-right"></i>
+              </button>
             </div>
             
-            <div class="page-info">
-              <span>1-10 of 32</span>
+            <div class="text-sm text-gray-700">
+              1-10 of 32
             </div>
           </div>
         </div>
 
         <!-- Add Question Form -->
-        <div class="form-panel">
-          <h3>Add Question</h3>
-          <div class="add-question-form">
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="question-content">Content</label>
-                  <textarea id="question-content" placeholder="Enter question content"></textarea>
+        <div class="bg-white rounded-lg shadow mt-6">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">Add Question</h3>
+          </div>
+          <div class="p-6">
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label for="add-question-content" class="block text-sm font-medium text-gray-700 mb-1">Content</label>
+                  <textarea id="add-question-content" rows="3" 
+                            placeholder="Enter question content..."
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
                 </div>
-                <div class="form-group">
-                  <label for="question-type">Question Type</label>
-                  <select id="question-type">
-                    <option>Select Question Type</option>
+                <div>
+                  <label for="add-question-type" class="block text-sm font-medium text-gray-700 mb-1">Question Type</label>
+                  <select id="add-question-type" 
+                          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Select Question Type</option>
+                    <option value="multiple">Multiple Choice</option>
+                    <option value="single">Single Choice</option>
+                    <option value="text">Text Answer</option>
                   </select>
                 </div>
-                <div class="form-group">
-                  <label for="question-active">Status</label>
-                  <div class="checkbox">
-                    <input type="checkbox" id="question-active">
-                    <label for="question-active">Active</label>
+                <div>
+                  <label for="add-question-active" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                  <div class="flex items-center h-10">
+                    <input type="checkbox" id="add-question-active" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="add-question-active" class="ml-2 text-sm text-gray-700">Active</label>
                   </div>
                 </div>
               </div>
-              <div class="toolbar">
-                <button class="btn btn-primary"><i class="fa fa-plus"></i> Show Answers</button>
-                <div class="actions">
-                  <button class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Cancel</button>
-                  <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+              
+              <div class="flex justify-between items-center pt-6 border-t border-gray-200">
+                <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                  <i class="fas fa-plus mr-2"></i>Show Answers
+                </button>
+                <div class="flex space-x-3">
+                  <button type="button" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                    <i class="fas fa-times mr-2"></i>Cancel
+                  </button>
+                  <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
+                    <i class="fas fa-save mr-2"></i>Save
+                  </button>
                 </div>
               </div>
+            </form>
           </div>
         </div>
         
         <!-- Answer List -->
-        <div class="table-panel">
-          <h3>Answer List</h3>
-          <div class="table-responsive">
-            <table class="data-table answer-table">
-              <thead>
+        <div class="bg-white rounded-lg shadow mt-6">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">Answer List</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
                 <tr>
-                  <th>Content</th>
-                  <th>Is Correct</th>
-                  <th>Status</th>
-                  <th>Action</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Content</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Is Correct</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="bg-white divide-y divide-gray-200">
                 <tr>
-                  <td>Wright brothers</td>
-                  <td>True</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Wright brothers</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">True</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Alexander Graham Bell</td>
-                  <td>False</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Alexander Graham Bell</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">False</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Albert Einstein</td>
-                  <td>False</td>
-                  <td>Yes</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Albert Einstein</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">False</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Yes</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td>Charles Babbage</td>
-                  <td>False</td>
-                  <td>cell</td>
-                  <td class="action-buttons">
-                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Charles Babbage</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">False</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">cell</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <div class="flex space-x-2">
+                      <button class="text-indigo-600 hover:text-indigo-900" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="text-red-600 hover:text-red-900" title="Delete">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="add-button-container">
-            <button class="btn btn-add"><i class="fas fa-plus"></i> Add</button>
+          <div class="px-6 py-4 border-t border-gray-200">
+            <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
+              <i class="fas fa-plus mr-2"></i>Add
+            </button>
           </div>
         </div>
         
-  <!-- Add Answer Form -->
-        <div class="form-panel">
-          <h3>Add Answer</h3>
-          <div class="add-answer-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Description</label>
-                <textarea placeholder="Enter your email"></textarea>
-              </div>
-            </div>
-            <div class="form-row two-columns">
-              <div class="form-group">
-                <label>Is Correct?</label>
-                <div class="checkbox-wrapper">
-                  <input type="checkbox" id="is-correct">
-                  <label for="is-correct">Active</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Status</label>
-                <div class="checkbox-wrapper">
-                  <input type="checkbox" id="answer-status">
-                  <label for="answer-status">Active</label>
-                </div>
-              </div>
-            </div>
+        <!-- Add Answer Form -->
+        <div class="bg-white rounded-lg shadow mt-6">
+          <div class="px-6 py-4 border-b border-gray-200">
+            <h3 class="text-lg font-medium text-gray-900">Add Answer</h3>
           </div>
-        </div>
+          <div class="p-6">
+            <form class="space-y-6">
+              <div>
+                <label for="answer-description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                <textarea id="answer-description" rows="3" 
+                          placeholder="Enter answer description..."
+                          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="is-correct" class="block text-sm font-medium text-gray-700 mb-1">Is Correct?</label>
+                  <div class="flex items-center h-10">
+                    <input type="checkbox" id="is-correct" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="is-correct" class="ml-2 text-sm text-gray-700">Correct Answer</label>
+                  </div>
+                </div>
+                <div>
+                  <label for="answer-status" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                  <div class="flex items-center h-10">
+                    <input type="checkbox" id="answer-status" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <label for="answer-status" class="ml-2 text-sm text-gray-700">Active</label>
+                  </div>
+                </div>
+              </div>
 
-        <!-- Footer (unified) -->
-        <footer class="site-footer">
-          <div class="footer-inner">
-            <div class="footer-brand">
-              <div class="brand">
-                <img src="../../assets/brand.png" alt="Quizzes">
-                <span>Quizzes</span>
+              <div class="flex justify-end space-x-3 pt-6 border-t border-gray-200">
+                <button type="button" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                  Cancel
+                </button>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                  Save Answer
+                </button>
               </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="footer-col">
-              <h4>Menu</h4>
-              <ul class="footer-menu">
-                <li><a href="../home.html">Home</a></li>
-                <li><a href="../quizzes.html">Quizzes</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Contact</h4>
-              <ul class="footer-contact">
-                <li><i class="fa-regular fa-envelope"></i> congdinh2021@gmail.com</li>
-                <li><i class="fa-solid fa-phone"></i> +84 944 551 356</li>
-                <li><i class="fa-solid fa-location-dot"></i> 123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam</li>
-              </ul>
-            </div>
+            </form>
           </div>
-          <div class="footer-bottom">© May 2024 - ReactJS 19</div>
-        </footer>
         </div>
       </main>
     </div>
+
+    <!-- Footer -->
+   <footer class="text-[rgba(56,182,255,1)] text-black py-8 mt-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img src="../../assets/brand.png" alt="Quizzes" class="h-8 w-auto mr-2">
+
+            </div>
+            <p class="text-rgba(33, 37, 41, 1)]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Menu</h4>
+            <ul class="space-y-2">
+              <li><a href="../home.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">Home</a></li>
+              <li><a href="../quizzes.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">Quizzes</a></li>
+              <li><a href="../about.html"
+                  class="text-[rgba(56,182,255,1)] hover:text-white transition duration-200">About</a></li>
+              <li><a href="../contact.html"
+                  class="text-[rgba(56,182,255,1)]   hover:text-white transition duration-200">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">123 Main Street, City, Country</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                <span class="text-[rgba(56,182,255,1)]">info@quizzes.com</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-black">
+          <p>&copy; 2023 Quizzes. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
   </div>
-  <script src="../../js/question-management.js"></script>
 </body>
 </html>
               
