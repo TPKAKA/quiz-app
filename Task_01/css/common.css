@@ -1,0 +1,526 @@
+/* Common CSS for all pages */
+body {
+  background: #f5f5f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  color: #212529;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 56px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  gap: 8px;
+}
+
+.header nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.header nav a {
+  color: #222;
+  text-decoration: none;
+  font-size: 0.98em;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.header nav a:hover {
+  color: #38b6ff;
+}
+
+.header nav a.active {
+  color: #38b6ff;
+}
+
+.header .profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
+}
+
+.header .profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Common Button Styles */
+.btn-primary {
+  background: #38b6ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #249be0;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #38b6ff;
+  border: 1px solid #38b6ff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #eaf6ff;
+}
+
+.btn-danger {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Common Footer Styles */
+.footer {
+  background: #fff;
+  border-top: 1.5px solid #e0e0e0;
+  margin-top: 32px;
+  padding: 32px 0 0 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 0 16px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo img {
+  width: 38px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.footer-logo span {
+  font-weight: bold;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.footer-logo p {
+  margin: 12px 0 0 0;
+  color: #444;
+  font-size: 0.98em;
+}
+
+.footer-menu,
+.footer-contact {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-menu h4,
+.footer-contact h4 {
+  margin-bottom: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.footer-menu ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu ul li,
+.footer-contact ul li {
+  margin-bottom: 6px;
+  font-size: 0.98em;
+}
+
+.footer-menu ul li a {
+  color: #38b6ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-menu ul li a:hover {
+  color: #249be0;
+  text-decoration: underline;
+}
+
+.footer-contact ul li i {
+  margin-right: 8px;
+  color: #38b6ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #888;
+  font-size: 0.95em;
+  margin-top: 18px;
+  padding-bottom: 10px;
+}
+
+/* Common Form Styles */
+.form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.form-row>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  padding: 7px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Common Media Queries */
+@media (max-width: 1100px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* Management shell shared styles (header/sidebar/footer) */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sticky top header */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 74px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 28px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 8px;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: #38b6ff;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user-profile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-profile .avatar-tip {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  background: #000;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+}
+
+.user-profile:hover .avatar-tip {
+  opacity: .9;
+}
+
+/* Dropdown menu styling for management pages */
+.user-profile .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 100;
+}
+
+.user-profile:hover .dropdown-menu {
+  display: block;
+}
+
+.user-profile .dropdown-content {
+  padding: 10px 15px;
+}
+
+.user-profile .dropdown-content p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.user-profile .dropdown-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.user-profile .dropdown-content a:hover {
+  color: #38b6ff;
+}
+
+/* Sidebar and content frame */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 300px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidebar h2 {
+  padding: 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar ul li i {
+  width: 18px;
+  text-align: center;
+}
+
+.sidebar ul li.active {
+  background: #e6f7ff;
+  border-left: 3px solid #38b6ff;
+  color: #38b6ff;
+}
+
+.sidebar ul li:hover:not(.active) {
+  background: #f5fbff;
+}
+
+.main-content {
+  flex: 1;
+  background: #f5f7fa;
+  overflow-y: auto;
+}
+
+.main-inner {
+  width: 100%;
+  max-width: 1620px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+/* Shared footer for management pages */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+}
+
+.site-footer .footer-inner {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-brand .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-brand .brand img {
+  height: 28px;
+}
+
+.footer-brand .brand span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer-brand p {
+  color: #666;
+  font-size: 14px;
+  max-width: 520px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu li {
+  margin: 6px 0;
+}
+
+.footer-menu a {
+  color: #38b6ff;
+  text-decoration: none;
+}
+
+.footer-menu a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  color: #333;
+}
+
+.footer-contact i {
+  color: #333;
+  width: 16px;
+  text-align: center;
+}
+
+.footer-bottom {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .header nav {
+    display: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

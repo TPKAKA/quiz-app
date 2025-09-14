@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management - Quizzes</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/quiz-management.css">
+  <link rel="stylesheet" href="../../css/user-management.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="logo">
+        <img src="../../assets/brand.png" alt="Quizzes Logo">
+      </div>
+      <nav class="main-nav">
+        <a href="../home.html">Home</a>
+        <a href="../quizzes.html">Quizzes</a>
+        <a class="active" href="#">Management</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="user-profile">
+        <img src="../../assets/profile-avatar.png" alt="Avatar" class="avatar">
+        <span class="avatar-tip">Cong Dinh</span>
+        <div class="dropdown-menu">
+          <div class="dropdown-content">
+            <p>Cong Dinh</p>
+            <p><a href="#">Change Password</a></p>
+            <p><a href="#">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="./quiz-management.html"><i class="fa-solid fa-clipboard-list"></i> Quiz Management</a></li>
+          <li><a href="./question-management.html"><i class="fa-solid fa-question-circle"></i> Question Management</a></li>
+          <li class="active"><a href="./user-management.html"><i class="fa-solid fa-user"></i> User Management</a></li>
+          <li><a href="./role-management.html"><i class="fa-solid fa-users-cog"></i> Role Management</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div class="main-inner">
+          <div class="content-header">
+            <h2>User Management</h2>
+          </div>
+
+          <!-- Search Panel -->
+          <div class="panel">
+            <div class="panel-header"><h3>User Management</h3></div>
+            <div class="search-panel">
+              <div class="search-form">
+                <div class="form-group field-name">
+                  <label for="u-name">Name</label>
+                  <input id="u-name" type="text" placeholder="Enter username to search">
+                </div>
+                <div class="form-group field-status minw-auto">
+                  <label for="u-active">Status</label>
+                  <div class="checkbox">
+                    <input type="checkbox" id="u-active">
+                    <label for="u-active">Active</label>
+                  </div>
+                </div>
+                <div class="button-create">
+                  <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Create</button>
+                </div>
+                <div class="button-group">
+                  <button type="reset" class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Clear</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User List -->
+          <div class="table-panel">
+            <h3>User List</h3>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>User Name</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Admin</td>
+                    <td>User</td>
+                    <td>admin@domain.com</td>
+                    <td>admin</td>
+                    <td>+84987654321</td>
+                    <td>Yes</td>
+                    <td class="action-buttons">
+                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Editor</td>
+                    <td>User</td>
+                    <td>editor@domain.com</td>
+                    <td>editor</td>
+                    <td>+84987654321</td>
+                    <td>Yes</td>
+                    <td class="action-buttons">
+                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cong</td>
+                    <td>Dinh</td>
+                    <td>congdinh@domain.com</td>
+                    <td>congdinh</td>
+                    <td>+84987654321</td>
+                    <td>Yes</td>
+                    <td class="action-buttons">
+                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Van</td>
+                    <td>Nguyen</td>
+                    <td>vannguyen@domain.com</td>
+                    <td>vannguyen</td>
+                    <td>+84987654321</td>
+                    <td>Yes</td>
+                    <td class="action-buttons">
+                      <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                      <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <div class="items-per-page">
+                <span>Items per page:</span>
+                <select>
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="page-numbers">
+                <a href="#" class="page-first"><i class="fas fa-angle-double-left"></i></a>
+                <a href="#" class="page-prev"><i class="fas fa-angle-left"></i></a>
+                <a href="#" class="page-number active">1</a>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+                <a href="#" class="page-next"><i class="fas fa-angle-right"></i></a>
+                <a href="#" class="page-last"><i class="fas fa-angle-double-right"></i></a>
+              </div>
+              <div class="page-info">
+                <span>1-10 of 32</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add User -->
+          <div class="form-panel">
+            <h3>Add User</h3>
+            <div class="add-user-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                  <label>User Name</label>
+                  <input type="text" placeholder="Enter your user name">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <input type="password" placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                  <label>Date of Birth</label>
+                  <input type="date">
+                </div>
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                  <label>Status</label>
+                  <div class="checkbox">
+                    <input type="checkbox" id="user-status">
+                    <label for="user-status">Active</label>
+                  </div>
+                </div>
+              </div>
+              <div class="toolbar right">
+                <button class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Cancel</button>
+                <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="site-footer">
+            <div class="footer-inner">
+              <div class="footer-brand">
+                <div class="brand">
+                  <img src="../../assets/brand.png" alt="Quizzes">
+                  <span>Quizzes</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="footer-col">
+                <h4>Menu</h4>
+                <ul class="footer-menu">
+                  <li><a href="../home.html">Home</a></li>
+                  <li><a href="../quizzes.html">Quizzes</a></li>
+                  <li><a href="../about.html">About</a></li>
+                  <li><a href="../contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                  <li><i class="fa-regular fa-envelope"></i> congdinh2021@gmail.com</li>
+                  <li><i class="fa-solid fa-phone"></i> +84 944 551 356</li>
+                  <li><i class="fa-solid fa-location-dot"></i> 123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam</li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="../../js/user-management.js"></script>
+</body>
+</html>

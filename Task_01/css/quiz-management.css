@@ -1,0 +1,458 @@
+/* Quiz Management - Layout and theme per design */
+
+:root {
+  --primary: #38b6ff;
+  /* matches screenshot blue */
+  --text: #333;
+  --muted: #666;
+  --border: #e0e0e0;
+  --bg: #f5f7fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Shell, header, sidebar, footer moved to common.css */
+
+/* Panels */
+.panel {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.panel-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.panel-header .actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+/* Search form */
+.search-panel .search-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  /* Name expands | Status compact */
+  grid-template-rows: auto auto;
+  /* Fields row + Actions row */
+  grid-template-areas:
+    "name status"
+    "create actions";
+  column-gap: 16px;
+  row-gap: 0;
+  align-items: end;
+  padding: 12px 16px;
+}
+
+.search-form .field-name {
+  grid-area: name;
+}
+
+.search-form .field-status {
+  grid-area: status;
+  align-self: end;
+}
+
+.search-form .button-create {
+  grid-area: create;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.search-form .button-group {
+  grid-area: actions;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  justify-self: end;
+}
+
+.search-form .field-type {
+  grid-area: type;
+}
+
+/* Variant for pages with a Type field and a separate Status row */
+.search-panel .search-form.has-type {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name type"
+    "status status"
+    "create actions";
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.form-group textarea {
+  height: auto;
+  min-height: 72px;
+  resize: vertical;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+}
+
+.button-group {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  height: 32px;
+  min-width: 80px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  background: #fff;
+  color: #333;
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Forms in panels */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 0 16px 12px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+.toolbar.right {
+  justify-content: flex-end;
+}
+
+.control-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 8px 16px;
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+/* Tables */
+.table-panel .panel-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #fafafa;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.btn-icon.delete {
+  color: #ff4d4f;
+}
+
+.quiz-thumbnail {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.cell-action {
+  text-align: center;
+}
+
+.cell-action .action-buttons {
+  justify-content: center;
+}
+
+/* Answer List specific styles */
+.answer-table thead {
+  background: #f7faff;
+}
+
+.answer-table tbody tr:nth-child(odd) {
+  background: #f7fbff;
+}
+
+.answer-table tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+/* Right-align action icons for Answer List */
+table.answer-table td.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.answer-table .btn-edit,
+.answer-table .btn-delete {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.answer-table .btn-edit {
+  color: var(--primary);
+}
+
+.answer-table .btn-delete {
+  color: #ff4d4f;
+}
+
+/* Add button row under Answer List */
+.add-button-container {
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn.btn-add {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+  min-width: 90px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn.btn-add i {
+  font-size: 14px;
+}
+
+.btn.btn-add:hover {
+  filter: brightness(1.05);
+}
+
+/* Question List specific alignment */
+.table-panel table.data-table th:nth-child(3),
+.table-panel table.data-table td:nth-child(3) {
+  /* Answers */
+  width: 80px;
+  text-align: center;
+}
+
+.table-panel table.data-table th:nth-child(4),
+.table-panel table.data-table td:nth-child(4) {
+  /* Status */
+  width: 100px;
+  text-align: center;
+}
+
+.table-panel table.data-table th:nth-child(5),
+.table-panel table.data-table td:nth-child(5) {
+  /* Action */
+  width: 110px;
+  text-align: center;
+}
+
+/* Icon buttons inside Question List (btn-edit/btn-delete) */
+td.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+td.action-buttons .btn-edit,
+td.action-buttons .btn-delete {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+td.action-buttons .btn-edit i {
+  color: var(--primary);
+}
+
+td.action-buttons .btn-delete i {
+  color: #ff4d4f;
+}
+
+/* Pagination */
+.pagination {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+.items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 8px;
+  justify-self: center;
+}
+
+.page-numbers a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.page-numbers a.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.pagination .page-info {
+  justify-self: end;
+  color: var(--muted);
+}
+
+/* Utilities */
+.mt-16 {
+  margin-top: 16px;
+}
+
+/* Helpers for compact inputs */
+.w-200 {
+  min-width: 200px;
+}
+
+.w-160 {
+  min-width: 160px;
+}
+
+.minw-auto {
+  min-width: auto;
+}
+
+/* Footer styles are in common.css */

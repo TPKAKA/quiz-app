@@ -1,0 +1,113 @@
+/* 404 Error Page Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("../assets/403.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  position: relative;
+}
+
+.error-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  max-width: 500px;
+  text-align: center;
+  z-index: 10;
+  margin-top: -95px;
+  height: 300px;
+  /* Tăng chiều cao để che vừa ảnh dấu hỏi trong background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-box h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.error-box p {
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-size: 14px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-button {
+  display: block;
+  background-color: #38b6ff;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  margin-top: auto;
+  /* Đẩy nút xuống dưới */
+}
+
+.back-button:hover {
+  background-color: #2a9ad9;
+}
+
+/* Background image already includes question mark */
+
+/* Horizontal line at bottom */
+.bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fff;
+  box-shadow: 0 -1px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .error-content {
+    padding: 20px;
+  }
+
+  .error-box {
+    padding: 30px;
+    margin-top: 0;
+  }
+}

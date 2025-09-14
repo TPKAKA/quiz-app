@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Management - Quizzes</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/quiz-management.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="logo">
+        <img src="../../assets/brand.png" alt="Quizzes Logo">
+      </div>
+      <nav class="main-nav">
+        <a href="../home.html">Home</a>
+        <a href="../quizzes.html">Quizzes</a>
+        <a class="active" href="#">Management</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="user-profile">
+        <img src="../../assets/profile-avatar.png" alt="Avatar" class="avatar">
+        <span class="avatar-tip">Cong Dinh</span>
+        <div class="dropdown-menu">
+          <div class="dropdown-content">
+            <p>Cong Dinh</p>
+            <p><a href="#">Change Password</a></p>
+            <p><a href="#">Logout</a></p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+          <li class="active"><a href="./quiz-management.html"><i class="fa-solid fa-clipboard-list"></i> Quiz Management</a></li>
+          <li><a href="./question-management.html"><i class="fa-solid fa-question-circle"></i> Question Management</a></li>
+          <li><a href="./user-management.html"><i class="fa-solid fa-user"></i> User Management</a></li>
+          <li><a href="./role-management.html"><i class="fa-solid fa-users-cog"></i> Role Management</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="main-inner">
+          <div class="panel">
+            <div class="panel-header"><h3>Quiz Management</h3></div>
+            <div class="search-panel">
+              <div class="search-form">
+                <div class="form-group field-name">
+                  <label for="quiz-name">Name</label>
+                  <input type="text" id="quiz-name" placeholder="Enter role name to search">
+                </div>
+                <div class="form-group field-status minw-auto">
+                  <label for="active">Status</label>
+                  <div class="checkbox">
+                    <input type="checkbox" id="active">
+                    <label for="active">Active</label>
+                  </div>
+                </div>
+                <div class="button-create">
+                  <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Create</button>
+                </div>
+                <div class="button-group">
+                  <button type="reset" class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Clear</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel table-panel">
+            <div class="panel-header"><h3>Quiz List</h3></div>
+            <div class="table-responsive">
+              <table>
+              <thead>
+                <tr>
+                  <th>header</th>
+                  <th>Description</th>
+                  <th>Description</th>
+                  <th>Description</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="../../assets/quiz-thumb1.jpg" class="quiz-thumbnail" alt="Quiz"></td>
+                  <td>Capitals of Country</td>
+                  <td>Test your knowledge of country capitals</td>
+                  <td>15m</td>
+                  <td>7</td>
+                  <td>Yes</td>
+                    <td class="cell-action">
+                      <div class="action-buttons">
+                        <button class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn-icon delete"><i class="fa-solid fa-trash"></i></button>
+                      </div>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td><img src="../../assets/quiz-thumb2.jpg" class="quiz-thumbnail" alt="Quiz"></td>
+                      <td>Inventions and Inventors</td>
+                      <td>Test your knowledge of inventors and their inventions</td>
+                      <td>20m</td>
+                      <td>10</td>
+                      <td>Yes</td>
+                      <td class="cell-action">
+                        <div class="action-buttons">
+                          <button class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button class="btn-icon delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pagination">
+                  <div class="items-per-page">
+                    <span>Items per page:</span>
+                    <select>
+                      <option>10</option>
+                      <option>20</option>
+                      <option>50</option>
+                    </select>
+                  </div>
+                  <div class="page-numbers">
+                    <a href="#"><i class="fa-solid fa-angles-left"></i></a>
+                    <a href="#"><i class="fa-solid fa-angle-left"></i></a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fa-solid fa-angle-right"></i></a>
+                    <a href="#"><i class="fa-solid fa-angles-right"></i></a>
+                  </div>
+                  <div class="page-info">1-10 of 32</div>
+                </div>
+              </div>
+          </div>
+
+          <!-- Add Quiz form -->
+          <div class="panel mt-16">
+            <div class="panel-header"><h3>Add Quiz</h3></div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="quiz-title">Title</label>
+                <input id="quiz-title" type="text" placeholder="Enter quiz title">
+              </div>
+              <div class="form-group">
+                <label for="quiz-desc">Description</label>
+                <textarea id="quiz-desc" placeholder="Enter your email"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="quiz-duration">Duration</label>
+                <input id="quiz-duration" type="text" placeholder="Enter quiz duration">
+              </div>
+              <div class="form-group">
+                <label for="quiz-thumb">Thumbnail URL</label>
+                <input id="quiz-thumb" type="text" placeholder="Enter quiz thumbnail URL">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <div class="checkbox"><input id="quiz-status" type="checkbox"><label for="quiz-status">Active</label></div>
+              </div>
+            </div>
+            <div class="toolbar">
+              <button class="btn btn-primary"><i class="fa fa-plus"></i> Show Questions</button>
+              <div class="actions">
+                <button class="btn btn-ghost"><i class="fa fa-rotate-left"></i> Cancel</button>
+                <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel table-panel mt-16">
+            <div class="panel-header"><h3>Question List</h3></div>
+            <div class="table-responsive">
+              <table>
+                  <thead>
+                    <tr>
+                      <th>Content</th>
+                      <th>Type</th>
+                      <th>Answers</th>
+                      <th>Order</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Who is the inventor of the airplane?</td>
+                      <td>MultipleChoice</td>
+                      <td>4</td>
+                      <td>1</td>
+                      <td>Yes</td>
+                      <td class="cell-action">
+                        <div class="action-buttons">
+                          <button class="btn-icon delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Who is the inventor of the World Wide Web?</td>
+                      <td>MultipleChoice</td>
+                      <td>4</td>
+                      <td>2</td>
+                      <td>Yes</td>
+                      <td class="cell-action">
+                        <div class="action-buttons">
+                          <button class="btn-icon delete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="toolbar right">
+              <button class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+            </div>
+          </div>
+
+          <!-- Add Question section -->
+          <div class="panel mt-16">
+            <div class="panel-header"><h3>Add Quiz</h3></div>
+            <div class="form-row">
+              <div class="form-group w-200">
+                <label for="question">Question</label>
+                <select id="question">
+                  <option>Select Question Type</option>
+                </select>
+              </div>
+              <div class="form-group w-160">
+                <label for="order">Order</label>
+                <input id="order" type="text" placeholder="Enter order of question in quiz">
+              </div>
+              <div style="margin-left:auto"></div>
+            </div>
+            <div class="control-bar">
+              <button class="btn btn-ghost">Cancel</button>
+              <button class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="site-footer">
+            <div class="footer-inner">
+              <div class="footer-brand">
+                <div class="brand">
+                  <img src="../../assets/brand.png" alt="Quizzes">
+              
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+              <div class="footer-col">
+                <h4>Menu</h4>
+                <ul class="footer-menu">
+                  <li><a href="../home.html">Home</a></li>
+                  <li><a href="../quizzes.html">Quizzes</a></li>
+                  <li><a href="../about.html">About</a></li>
+                  <li><a href="../contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                  <li><i class="fa-regular fa-envelope"></i> congdinh2021@gmail.com</li>
+                  <li><i class="fa-solid fa-phone"></i> +84 944 551 356</li>
+                  <li><i class="fa-solid fa-location-dot"></i> 123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam</li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
