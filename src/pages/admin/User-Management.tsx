@@ -10,12 +10,7 @@ const UserManagement: React.FC = () => {
             <div className="flex flex-1">
                 <Menu />
                 <main className="flex-1 p-6">
-                    {/* Header */}
-                    <div className="mb-6">
-                        <h1 className="text-2xl font-bold text-gray-900">User Management</h1>
-                        <p className="mt-1 text-sm text-gray-600">Manage user accounts and permissions</p>
-                    </div>
-
+                   
                     {/* Search Panel */}
                     <div className="bg-white rounded-lg shadow mb-6">
                         <div className="p-6">
@@ -274,7 +269,7 @@ const UserManagement: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200">
+                                <div className=" flex justify-end space-x-3 pt-6 border-t border-gray-200">
                                     <button type="button" className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
                                         <i className="fas fa-times mr-2"></i>Cancel
                                     </button>
@@ -285,9 +280,10 @@ const UserManagement: React.FC = () => {
                             </form>
                         </div>
                     </div>
+                     <Footer />
                 </main>
             </div>
-            <Footer />
+           
         </div>
     );
 };

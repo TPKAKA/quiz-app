@@ -262,9 +262,9 @@ const QuestionManagement: React.FC = () => {
                             </form>
                         </div>
                     </div>
+                    <Footer />
                 </main>
             </div>
-            <Footer />
         </div>
     );
 };

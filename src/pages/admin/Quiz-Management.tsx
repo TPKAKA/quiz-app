@@ -240,9 +240,10 @@ const QuizManagement: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <Footer />
                 </main>
             </div>
-            <Footer />
+
         </div>
     );
 };

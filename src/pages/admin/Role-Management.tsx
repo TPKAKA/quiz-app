@@ -132,9 +132,10 @@ const RoleManagement: React.FC = () => {
                             </table>
                         </div>
                     </div>
+                    <Footer />
                 </main>
             </div>
-            <Footer />
+
         </div>
     );
 };
