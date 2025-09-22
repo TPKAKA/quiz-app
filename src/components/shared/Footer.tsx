@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import brandImg from '../../assets/brand.png';
 
 const Footer: React.FC = () => (
-    <footer className="text-[rgba(56,182,255,1)] text-black py-8 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="text-[rgba(56,182,255,1)] text-black py-6 mt-6">
+        <div className="px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <div className="flex items-center mb-4">
@@ -40,7 +40,7 @@ const Footer: React.FC = () => (
                     </ul>
                 </div>
             </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-black">
+            <div className="border-t border-gray-700 mt-6 pt-6 text-center text-black">
                 <p>&copy; 2023 Quizzes. All rights reserved.</p>
             </div>
         </div>
